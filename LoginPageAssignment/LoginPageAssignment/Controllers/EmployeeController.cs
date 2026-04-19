@@ -20,7 +20,7 @@ namespace LoginPageAssignment.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View();
+            return View(new LoginDto());
         }
         [HttpPost]
         public IActionResult Login(LoginDto l)
@@ -35,10 +35,6 @@ namespace LoginPageAssignment.Controllers
                 {
                     return RedirectToAction("EmployeeDashboard", new { name = user.EmpName });
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Invalid email or password");
-                }
             }
 
             return View(l);
@@ -52,7 +48,7 @@ namespace LoginPageAssignment.Controllers
         [HttpGet]
         public IActionResult Registration()
         {
-            return View();
+            return View(new RegistrationDto());
         }
         [HttpPost]
         public IActionResult Registration(RegistrationDto r)

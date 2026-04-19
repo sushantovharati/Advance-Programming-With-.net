@@ -2,12 +2,14 @@
 <form method="post">
     <div>
         <label>Email:</label>
-        <input type="text" name="EmpEmail" placeholder="you@mail.com"/>
+        <input type="text" value="@Model.Email" name="EmpEmail" placeholder="you@mail.com"/>
+        <span class="text-danger">@Html.ValidationMessage("EmpEmail")</span>
     </div>
 
     <div>
         <label>Password: </label>
-        <input type="text" name="EmpPassword" placeholder="Password" />
+        <input type="text" value="@Model.Password" name="EmpPassword" placeholder="Password" />
+        <span class="text-danger">@Html.ValidationMessage("EmpPassword")</span>
     </div>
     <input type="submit" name="Login" class="btn btn-primary" />
 </form>

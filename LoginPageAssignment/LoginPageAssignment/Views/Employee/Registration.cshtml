@@ -4,17 +4,20 @@
 
     <div>
         <label>Name</label>
-        <input type="text" name="Name" placeholder="Full Name" />
+        <input type="text" value="@Model.Name" name="Name" placeholder="Full Name" />
+        <span class="text-danger">@Html.ValidationMessage("Name")</span>
     </div>
 
     <div>
         <label>Email</label>
-        <input type="email" name="Email" placeholder="you@mail.com" />
+        <input type="email" value="@Model.Email" name="Email" placeholder="you@mail.com" />
+        <span class="text-danger">@Html.ValidationMessage("Email")</span>
     </div>
 
     <div>
         <label>Password</label>
-        <input type="password" name="Password" placeholder="Password" />
+        <input type="password" value="@Model.Password" name="Password" placeholder="Password" />
+        <span class="text-danger">@Html.ValidationMessage("Password")</span>
     </div>
 
     <input type="submit" value="Submit" class="btn btn-success" />

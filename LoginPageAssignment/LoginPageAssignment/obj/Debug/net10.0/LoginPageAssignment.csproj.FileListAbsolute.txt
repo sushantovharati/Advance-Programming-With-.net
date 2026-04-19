@@ -223,3 +223,4 @@ C:\Users\User\Desktop\Advance-Programming-With-.net-main\LoginPageAssignment\Log
 C:\Users\User\Desktop\Advance-Programming-With-.net-main\LoginPageAssignment\LoginPageAssignment\obj\Debug\net10.0\LoginPageAssignment.genruntimeconfig.cache
 C:\Users\User\Desktop\Advance-Programming-With-.net-main\LoginPageAssignment\LoginPageAssignment\obj\Debug\net10.0\ref\LoginPageAssignment.dll
 C:\Users\User\Desktop\Advance-Programming-With-.net-main\LoginPageAssignment\LoginPageAssignment\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\User\Desktop\Advance-Programming-With-.net-main\LoginPageAssignment\LoginPageAssignment\obj\Debug\net10.0\LoginPageAssignment.sourcelink.json
