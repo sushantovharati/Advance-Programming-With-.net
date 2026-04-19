@@ -17,8 +17,35 @@ namespace LoginPageAssignment.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Login()
         {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Login(LoginDto l)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = (from e in db.Employees
+                            where e.EmpEmail == l.EmpEmail && e.EmpPassword == l.EmpPassword
+                            select e).FirstOrDefault();
+
+                if (user != null)
+                {
+                    return RedirectToAction("EmployeeDashboard", new { name = user.EmpName });
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Invalid email or password");
+                }
+            }
+
+            return View(l);
+        }
+        public IActionResult EmployeeDashboard(string name)
+        {
+            ViewBag.Name = name;
             return View();
         }
 
@@ -30,6 +57,11 @@ namespace LoginPageAssignment.Controllers
         [HttpPost]
         public IActionResult Registration(RegistrationDto r)
         {
+            if ((from e in db.Employees where e.EmpEmail == r.Email select e).Any())
+            {
+                ModelState.AddModelError("Email", "Email already exists");
+            }
+
             if (ModelState.IsValid)
             {
                 var emp = new Employee()
